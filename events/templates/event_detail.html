@@ -1,0 +1,16 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+<h1>{{ event.name }}</h1>
+<p>{{ event.description }}</p>
+<p><strong>Data de Início:</strong> {{ event.start_date }}</p>
+<p><strong>Local:</strong> {{ event.location }}</p>
+
+<h2>Inscrever-se</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Inscrever</button>
+</form>
+{% endblock %}
+
